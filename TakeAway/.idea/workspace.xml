@@ -4,6 +4,7 @@
     <list default="true" id="75f09ff9-6a8a-4228-b569-d40998089f6d" name="Default" comment="" />
     <ignored path="TakeAway.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,12 +21,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebRoot/Web/Application/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
               <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/Web/Application/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+              <folding>
+                <element signature="n#script#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#7;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#2;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,6 +66,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/WebRoot/Web/Application/index.html" />
+        <option value="$PROJECT_DIR$/WebRoot/Web/Application/login.html" />
       </list>
     </option>
   </component>
@@ -219,12 +243,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1471853748498</updated>
-      <workItem from="1471853749780" duration="35000" />
+      <workItem from="1471853749780" duration="716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35000" />
+    <option name="totallyTimeSpent" value="716000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -270,6 +294,26 @@
         <state relative-caret-position="100">
           <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/Web/Application/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding>
+            <element signature="n#script#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#7;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#2;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
