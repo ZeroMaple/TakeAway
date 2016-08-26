@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../Resources/css/reset.css">
+    <link rel="stylesheet" href="../Resources/css/login.css">
+    <link rel="stylesheet" href="../Resources/css/component.css">
+    <link rel="stylesheet" href="../Resources/css/default.css">
+    <link rel="stylesheet" href="../Resources/css/index.css">
+</head>
+<style>
+    .layui-layer{
+        background-color: rgba(0,0,0,0.5)!important;
+    }
+    .loginIndex {
+        z-index: 0;
+        color:#FFFFFF;
+        text-align: center;
+    }
+    .loginIndex .layui-layer-btn {
+        text-align: center;
+        margin-top: 25px;
+    }
+</style>
+<body>
+<header>
+    <div>
+        <img src="../Resources/img/logo.png" alt="">
+    </div>
+    <div>
+        <button id="login" class="btn btn-2 btn-2c">login</button>
+        <button id="register" class="btn btn-2 btn-2c">register</button>
+        <button class="btn btn-2 btn-2c">我 要 开 店</button>
+    </div>
+</header>
+<section class="search">
+
+    <canvas id="text" width="500" height="100"></canvas>
+
+    <canvas id="stage" width="500" height="100"></canvas>
+
+    <form id="form">
+        <input type="text" id="inputText" placeholder="请输入您的位置" />
+        <input type="submit" value="搜索" />
+    </form>
+</section>
+<section id="loginIndex">
+    <div class="container">
+        <section class="content">
+            <h2>用户登录</h2>
+            <span class="input input--kaede">
+                <input class="input__field input__field--kaede" type="text" id="input-35" />
+                <label class="input__label input__label--kaede" for="input-35">
+                    <span class="input__label-content input__label-content--kaede">用户账号</span>
+                </label>
+            </span>
+            <span class="input input--kaede">
+                <input class="input__field input__field--kaede" type="password" id="input-36" />
+                <label class="input__label input__label--kaede" for="input-36">
+                    <span class="input__label-content input__label-content--kaede">密码</span>
+                </label>
+            </span>
+        </section>
+    </div>
+</span>
+</section>
+</body>
+<script src="../Resources/js/jquery.min.js"></script>
+<script src='../Resources/js/TweenLite.min.js'></script>
+<script src='../Resources/js/easeljs-0.7.1.min.js'></script>
+<script src="../Resources/js/index.js"></script>
+<script src="../Resources/js/layer.js"></script>
+<script src="../Resources/js/classie.js"></script>
+<script>
+    $("#loginIndex").hide();
+    $("#login").click(function (e) {
+        $("#loginIndex").show();
+        layer.open({
+            type: 1,
+            title:false,
+            area: ['40%', '520px'],
+            skin: 'loginIndex', //样式类名
+            btn: ['登录', '关闭'],
+            yes:function (index, layero) {
+                console.log(1);
+            },
+            closeBtn: 0, //不显示关闭按钮
+            shift: 5,
+            shadeClose: false, //开启遮罩关闭
+            content: $("#loginIndex")
+        });
+    });
+</script>
+</html>
