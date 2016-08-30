@@ -125,20 +125,7 @@
 <script src="../Resources/js/layer.js"></script>
 <script src="../Resources/js/classie.js"></script>
 <script>
-    $.ajax({
-        url:"http://Zero:8080/Web/Application/login.action",
-        method:"POST",
-        dataType:"jsonp",
-        data:{
-            nowPage: page
-        },
-        success:function (data) {
-            console.log(data);
-        },
-        error:function (err) {
-            console.error(err);
-        }
-    });
+
 </script>
 <script>
     $("#loginIndex").hide();
@@ -151,7 +138,19 @@
             skin: 'loginIndex', //样式类名
             btn: ['登录', '关闭'],
             yes:function (index, layero) {
-                console.log(1);
+                $.ajax({
+                    url:"http://Zero:8080/Web/Application/verifyLogin.action",
+                    method:"POST",
+                    dataType:"jsonp",
+                    data:{
+                    },
+                    success:function (data) {
+                        console.log(data);
+                    },
+                    error:function (err) {
+                        console.error(err);
+                    }
+                });
             },
             closeBtn: 0, //不显示关闭按钮
             shift: 5,
@@ -169,7 +168,19 @@
             skin: 'loginIndex', //样式类名
             btn: ['提交', '关闭'],
             yes:function (index, layero) {
-                console.log(1);
+                $.ajax({
+                    url:"http://Zero:8080/Web/Application/login.action",
+                    method:"POST",
+                    dataType:"jsonp",
+                    data:{
+                    },
+                    success:function (data) {
+                        console.log(data);
+                    },
+                    error:function (err) {
+                        console.error(err);
+                    }
+                });
             },
             closeBtn: 0, //不显示关闭按钮
             shift: 5,
