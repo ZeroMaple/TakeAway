@@ -125,6 +125,22 @@
 <script src="../Resources/js/layer.js"></script>
 <script src="../Resources/js/classie.js"></script>
 <script>
+    $.ajax({
+        url:"http://Zero:8080/Web/Application/login.action",
+        method:"POST",
+        dataType:"jsonp",
+        data:{
+            nowPage: page
+        },
+        success:function (data) {
+            console.log(data);
+        },
+        error:function (err) {
+            console.error(err);
+        }
+    });
+</script>
+<script>
     $("#loginIndex").hide();
     $("#login").click(function (e) {
         $("#loginIndex").show();
