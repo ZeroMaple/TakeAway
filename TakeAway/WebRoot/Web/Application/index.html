@@ -96,24 +96,6 @@
                         <span class="input__label-content input__label-content--kaede">姓名</span>
                     </label>
                 </span>
-                <span class="input input--kaede">
-                    <input class="input__field input__field--kaede" type="text" id="register_sex" />
-                    <label class="input__label input__label--kaede" for="register_sex">
-                        <span class="input__label-content input__label-content--kaede">性别</span>
-                    </label>
-                </span>
-                <span class="input input--kaede">
-                    <input class="input__field input__field--kaede" type="text" id="register_address" />
-                    <label class="input__label input__label--kaede" for="register_address">
-                        <span class="input__label-content input__label-content--kaede">收货地址</span>
-                    </label>
-                </span>
-                <span class="input input--kaede">
-                    <input class="input__field input__field--kaede" type="text" id="register_num" />
-                    <label class="input__label input__label--kaede" for="register_num">
-                        <span class="input__label-content input__label-content--kaede">门牌号</span>
-                    </label>
-                </span>
             </section>
         </div>
     </section>
@@ -138,14 +120,23 @@
             skin: 'loginIndex', //样式类名
             btn: ['登录', '关闭'],
             yes:function (index, layero) {
+                var userName = $("#login_phone").val();
+                var passWord = $("#login_password").val();
                 $.ajax({
-                    url:"http://Zero:8080/Web/Application/verifyLogin.action",
+                    url:"http://Zero:8080/TakeAway/Web/Application/verifyLogin.action",
                     method:"POST",
                     dataType:"jsonp",
                     data:{
+                        userPhone:userName,
+                        userPassWord:passWord
                     },
                     success:function (data) {
-                        console.log(data);
+                        var val = data;
+                        if(data == true){
+                            window.location.href="http://Zero:8080/TakeAway/Web/Application/login.action";
+                        }else {
+                            alert("账号密码错误！");
+                        }
                     },
                     error:function (err) {
                         console.error(err);
@@ -164,15 +155,22 @@
         layer.open({
             type: 1,
             title:false,
-            area: ['40%', '520px'],
+            area: ['40%', '780px'],
             skin: 'loginIndex', //样式类名
             btn: ['提交', '关闭'],
             yes:function (index, layero) {
+                var userName = $("#register_username").val();
+                var userPhone = $("#register_phone").val();
+                var userPassWord = $("#register_password").val();
+                console.log(userName + "," + userPhone + "," + userPassWord);
                 $.ajax({
-                    url:"http://Zero:8080/Web/Application/login.action",
+                    url:"http://Zero:8080/TakeAway/Web/Application/registered.action",
                     method:"POST",
                     dataType:"jsonp",
                     data:{
+                        userName:userName,
+                        userPhone:userPhone,
+                        userPassWord:userPassWord
                     },
                     success:function (data) {
                         console.log(data);
