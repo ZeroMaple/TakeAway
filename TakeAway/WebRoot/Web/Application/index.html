@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Resources/css/component.css">
     <link rel="stylesheet" href="../Resources/css/default.css">
     <link rel="stylesheet" href="../Resources/css/index.css">
+    <script src="../Resources/js/jquery.min.js"></script>
 </head>
 <style>
     .layui-layer{
@@ -45,28 +46,79 @@
         <input type="submit" value="搜索" />
     </form>
 </section>
+<form action="">
 <section id="loginIndex">
     <div class="container">
         <section class="content">
             <h2>用户登录</h2>
             <span class="input input--kaede">
-                <input class="input__field input__field--kaede" type="text" id="input-35" />
-                <label class="input__label input__label--kaede" for="input-35">
-                    <span class="input__label-content input__label-content--kaede">用户账号</span>
+                <input class="input__field input__field--kaede" type="text" id="login_phone" />
+                <label class="input__label input__label--kaede" for="login_phone">
+                    <span class="input__label-content input__label-content--kaede">手机号</span>
                 </label>
             </span>
             <span class="input input--kaede">
-                <input class="input__field input__field--kaede" type="password" id="input-36" />
-                <label class="input__label input__label--kaede" for="input-36">
+                <input class="input__field input__field--kaede" type="password" id="login_password" />
+                <label class="input__label input__label--kaede" for="login_password">
                     <span class="input__label-content input__label-content--kaede">密码</span>
                 </label>
             </span>
         </section>
     </div>
-</span>
 </section>
+</form>
+<form action="">
+    <section id="registerIndex">
+        <div class="container">
+            <section class="content">
+                <h2>用户注册</h2>
+                <span class="input input--kaede">
+                    <input class="input__field input__field--kaede" type="text" id="register_phone" />
+                    <label class="input__label input__label--kaede" for="register_phone">
+                        <span class="input__label-content input__label-content--kaede">手机号</span>
+                    </label>
+                </span>
+                <span class="input input--kaede">
+                    <input class="input__field input__field--kaede" type="password" id="register_password" />
+                    <label class="input__label input__label--kaede" for="register_password">
+                        <span class="input__label-content input__label-content--kaede">密码</span>
+                    </label>
+                </span>
+                <span class="input input--kaede">
+                    <input class="input__field input__field--kaede" type="password" id="register_repassword" />
+                    <label class="input__label input__label--kaede" for="register_repassword">
+                        <span class="input__label-content input__label-content--kaede">重复密码</span>
+                    </label>
+                </span>
+                <span class="input input--kaede">
+                    <input class="input__field input__field--kaede" type="text" id="register_username" />
+                    <label class="input__label input__label--kaede" for="register_username">
+                        <span class="input__label-content input__label-content--kaede">姓名</span>
+                    </label>
+                </span>
+                <span class="input input--kaede">
+                    <input class="input__field input__field--kaede" type="text" id="register_sex" />
+                    <label class="input__label input__label--kaede" for="register_sex">
+                        <span class="input__label-content input__label-content--kaede">性别</span>
+                    </label>
+                </span>
+                <span class="input input--kaede">
+                    <input class="input__field input__field--kaede" type="text" id="register_address" />
+                    <label class="input__label input__label--kaede" for="register_address">
+                        <span class="input__label-content input__label-content--kaede">收货地址</span>
+                    </label>
+                </span>
+                <span class="input input--kaede">
+                    <input class="input__field input__field--kaede" type="text" id="register_num" />
+                    <label class="input__label input__label--kaede" for="register_num">
+                        <span class="input__label-content input__label-content--kaede">门牌号</span>
+                    </label>
+                </span>
+            </section>
+        </div>
+    </section>
+</form>
 </body>
-<script src="../Resources/js/jquery.min.js"></script>
 <script src='../Resources/js/TweenLite.min.js'></script>
 <script src='../Resources/js/easeljs-0.7.1.min.js'></script>
 <script src="../Resources/js/index.js"></script>
@@ -91,5 +143,57 @@
             content: $("#loginIndex")
         });
     });
+    $("#registerIndex").hide();
+    $("#register").click(function (e) {
+        $("#registerIndex").show();
+        layer.open({
+            type: 1,
+            title:false,
+            area: ['40%', '520px'],
+            skin: 'loginIndex', //样式类名
+            btn: ['提交', '关闭'],
+            yes:function (index, layero) {
+                console.log(1);
+            },
+            closeBtn: 0, //不显示关闭按钮
+            shift: 5,
+            shadeClose: false, //开启遮罩关闭
+            content: $("#registerIndex")
+        });
+    });
+</script>
+<script>
+    (function() {
+        if (!String.prototype.trim) {
+            (function() {
+                // Make sure we trim BOM and NBSP
+                var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                String.prototype.trim = function() {
+                    return this.replace(rtrim, '');
+                };
+            })();
+        }
+
+        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+            // in case the input is already filled..
+            if( inputEl.value.trim() !== '' ) {
+                classie.add( inputEl.parentNode, 'input--filled' );
+            }
+
+            // events:
+            inputEl.addEventListener( 'focus', onInputFocus );
+            inputEl.addEventListener( 'blur', onInputBlur );
+        } );
+
+        function onInputFocus( ev ) {
+            classie.add( ev.target.parentNode, 'input--filled' );
+        }
+
+        function onInputBlur( ev ) {
+            if( ev.target.value.trim() === '' ) {
+                classie.remove( ev.target.parentNode, 'input--filled' );
+            }
+        }
+    })();
 </script>
 </html>
