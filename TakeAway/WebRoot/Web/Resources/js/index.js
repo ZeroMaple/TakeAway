@@ -30,7 +30,7 @@
         form = document.getElementById('form');
         form.style.top = offsetY+200+'px';
         form.style.left = offsetX+'px';
-        input = document.getElementById('inputText');
+        input = document.getElementById('tipinput');
     }
 
     function initText() {

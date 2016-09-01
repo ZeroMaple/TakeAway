@@ -11,8 +11,8 @@ header {
 }
 header > div{
     float: left;
-    width: 2%;
-    margin: 10px 50px;
+    width: 8%;
+    margin: 4px 50px;
 }
 header > div > img {
     width: 100%;
@@ -30,7 +30,7 @@ header > div:last-child {
     margin: 0; padding: 0;
     left: 0;
 }
-#inputText {
+#tipinput {
     border: 1px solid #ddd;
     padding: 6px;
     font-size: 18px;
@@ -79,8 +79,22 @@ form {
     -moz-border-radius: 20px 0px 20px 0 !important;
     border-radius: 20px 0px 20px 0 !important;
 }
+.LoginImg * {
+   float: left;
+}
+.LoginImg > img {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 50% 50%;
+    -moz-border-radius: 50% 50%;
+    border-radius: 50% 50%;
+    margin: 0 5% 0 30%;
+}
+.dis {
+    display: none;
+}
 
-header:after {
+header:after,.LoginImg:after {
     content: '\20';
     display: block;
     clear: both;

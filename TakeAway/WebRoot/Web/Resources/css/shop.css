@@ -1,0 +1,10 @@
+body {
+    background-color: #eeeeee;
+}
+iframe {
+    width: 100%;
+}
+section > div {
+    width: 80%;
+    margin: 0 auto;
+}
