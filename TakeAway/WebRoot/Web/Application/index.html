@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../Resources/css/default.css">
     <link rel="stylesheet" href="../Resources/css/index.css">
     <script src="../Resources/js/jquery.min.js"></script><link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
-    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=5e4191d75a95505dd562c720d08c3d2c&plugin=AMap.Autocomplete"></script>
+    <!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=5e4191d75a95505dd562c720d08c3d2c&plugin=AMap.Autocomplete"></script>-->
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=5e4191d75a95505dd562c720d08c3d2c&plugin=AMap.Geocoder"></script>
     <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 </head>
 <style>
@@ -29,6 +30,8 @@
     }
 </style>
 <body>
+
+<div id="container1" class="dis"></div>
 <header>
     <div>
         <img src="../Resources/img/logo1.png" alt="">
@@ -51,7 +54,7 @@
 
     <form id="form">
         <input type="text" id="tipinput" placeholder="请输入您的位置" />
-        <input type="submit" value="搜索" />
+        <input type="submit" onclick="geocoder()" value="搜索" />
     </form>
 </section>
 <form action="">
@@ -108,6 +111,7 @@
         </div>
     </section>
 </form>
+
 </body>
 <script src='../Resources/js/TweenLite.min.js'></script>
 <script src='../Resources/js/easeljs-0.7.1.min.js'></script>
@@ -262,11 +266,39 @@
 //        str.push('精度：' + data.accuracy + ' 米');
 //        str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
 //        document.getElementById('tip').innerHTML = str.join('<br>');
-        console.log(data.position.getLng() + "," + data.position.getLat());
+//        console.log(data.position.getLng() + "," + data.position.getLat());
     }
     //解析定位错误信息
     function onError(data) {
         document.getElementById('tip').innerHTML = '定位失败';
+    }
+</script>
+<script type="text/javascript">
+    var map = new AMap.Map("container1", {
+        resizeEnable: true
+    });
+    function geocoder() {
+        var geocoder = new AMap.Geocoder({
+            city: "010", //城市，默认：“全国”
+            radius: 1000 //范围，默认：500
+        });
+        //地理编码,返回地理编码结果
+        geocoder.getLocation("北京市海淀区", function(status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+                geocoder_CallBack(result);
+            }
+        });
+    }
+    //地理编码返回结果展示
+    function geocoder_CallBack(data) {
+        var resultStr = "";
+        //地理编码结果数组
+        var geocode = data.geocodes;
+        for (var i = 0; i < geocode.length; i++) {
+            //拼接输出html
+            console.log( geocode[i].location.getLng() + ", " + geocode[i].location.getLat());
+        }
+        map.setFitView();
     }
 </script>
 </html>
